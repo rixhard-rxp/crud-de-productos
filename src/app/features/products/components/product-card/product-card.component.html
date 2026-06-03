@@ -1,1 +1,10 @@
-<p>product-card works!</p>
+<div class="tarjeta-producto">
+    <div class="info-producto">
+        <h3>{{ producto.nombre }}</h3>
+        <p class="precio">{{ producto.precio | currency:'COP':'symbol':'1.0-0' }}</p>
+    </div>
+
+    <button class="btn-eliminar" (click)="notificarAlEliminar()">
+        Eliminar
+    </button>
+</div>

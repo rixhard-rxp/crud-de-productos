@@ -1,1 +1,26 @@
-<p>product-list works!</p>
+<div class="contenedor-lista">
+    <h2>Inventario de Productos</h2>
+    <p class="subtitulo">Listado en tiempo real de los Productos Agregados</p>
+
+    <div class="fila-producto">
+        @for (item of productos; track item.id) {
+        <div class="tarjeta-producto">
+            <div class="info-producto">
+                <h3>{{ item.nombre }}</h3>
+                <p class="precio">{{ item.precio | currency:'COP':'symbol':'1.0-0' }}</p>
+            </div>
+
+            <button class="btn-eliminar" (click)="eliminar(item.id)">
+                Eliminar
+            </button>
+        </div>
+        } @empty {
+
+        <div class="lista-vacia">
+            <img src="../../../../../assets/icono-advertencia.png">
+            <span>No hay productos para mostrar</span>
+        </div>
+
+        }
+    </div>
+</div>
