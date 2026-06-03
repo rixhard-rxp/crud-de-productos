@@ -1,1 +1,36 @@
-<p>product-form works!</p>
+
+<div class="formulario">
+
+    <h2>Registrar Producto</h2>
+    <p class="subtitulo">Ingrese un nuevo Producto a la Lista</p>
+
+    <form (ngSubmit)="guardarProducto()">
+
+        <div class="campo">
+            <label for="nombre">Nombre del Producto</label>
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                [(ngModel)]="nombreProducto"
+                placeholder="Ingrese el Nombre del Producto"
+                required>
+        </div>
+
+        <div class="campo">
+            <label for="precio">Precio del Producto</label>
+            <input
+                type="number"
+                id="precio"
+                name="precio"
+                [(ngModel)]="precioProducto"
+                placeholder="Ingrese el Precio del Producto"
+                required>
+        </div>
+
+        <button type="submit" class="btn-guardar">
+            Guardar Producto
+        </button>
+
+    </form>
+</div>
